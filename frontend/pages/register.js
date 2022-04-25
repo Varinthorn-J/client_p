@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Head from "next/head";
+// import Head from "next/head";
 import Layout from "../components/layout";
-import styles from "../styles/Home.module.css";
+// import styles from "../styles/Home.module.css";
 import Navbar from "../components/navbar";
 import axios from "axios";
 import config from "../config/config";
@@ -24,8 +24,7 @@ export default function Register({ token }) {
   const register = async (req, res) => {
     try {
       let result = await axios.post(`${config.URL}/register`, {
-        name,
-        surname,
+      
         username,
         email,
         password,
@@ -87,7 +86,7 @@ export default function Register({ token }) {
         <div class="H-20 w-30 rounded overflow-hidden shadow-lg">
           <form class="dark:bg-gray-800 shadow-md rounded px-10 pt-15 pb-8 mb-15 ">
             <p class="text-slate-200 pt-5">Create Account</p>
-            <p class="text-slate-200 mb-2">Status: {status}</p>
+            <p class="text-slate-200 mb-2">Status:{status}</p>
             <div class="mb-4">{registerForm()}</div>
 
             <div class="flex items-center justify-between">
